@@ -191,7 +191,7 @@ python Run.py -model STFGNN -mode ori -dataset_test PEMS08 --first_layer_embeddi
 
 ## Citation
 
-If you find UrbanGPT useful in your research or applications, please kindly cite:
+If you find FlashST useful in your research or applications, please kindly cite:
 
 ```
 @misc{li2024flashst,
