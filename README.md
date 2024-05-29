@@ -1,6 +1,6 @@
 # FlashST: A Simple and Universal Prompt-Tuning Framework for Traffic Prediction
 
-A pytorch implementation for the paper: [FlashST: A Simple and Universal Prompt-Tuning Framework for Traffic Prediction]<br />  
+A pytorch implementation for the paper: [FlashST: A Simple and Universal Prompt-Tuning Framework for Traffic Prediction](https://arxiv.org/abs/2405.17898)<br />  
 
 [Zhonghang Li](https://scholar.google.com/citations?user=__9uvQkAAAAJ), [Lianghao Xia](https://akaxlh.github.io/), [Yong Xu](https://scholar.google.com/citations?user=1hx5iwEAAAAJ), [Chao Huang](https://sites.google.com/view/chaoh)* (*Correspondence)<br />  
 
@@ -189,22 +189,22 @@ python Run.py -model STFGNN -mode ori -dataset_test PEMS08 --first_layer_embeddi
 ---------
 
 
-<!-- ## Citation
+## Citation
 
 If you find UrbanGPT useful in your research or applications, please kindly cite:
 
 ```
-@misc{li2024urbangpt,
-      title={UrbanGPT: Spatio-Temporal Large Language Models}, 
-      author={Zhonghang Li and Lianghao Xia and Jiabin Tang and Yong Xu and Lei Shi and Long Xia and Dawei Yin and Chao Huang},
+@misc{li2024flashst,
+      title={FlashST: A Simple and Universal Prompt-Tuning Framework for Traffic Prediction}, 
+      author={Zhonghang Li and Lianghao Xia and Yong Xu and Chao Huang},
       year={2024},
-      eprint={2403.00813},
+      eprint={2405.17898},
       archivePrefix={arXiv},
-      primaryClass={cs.CL}
+      primaryClass={cs.LG}
 }
 ```
 ---------
--->
+
 
 ## Acknowledgements
 We developed our code framework drawing inspiration from [AGCRN](https://github.com/LeiBAI/AGCRN) and [GPT-ST](https://github.com/HKUDS/GPT-ST). Furthermore, the implementation of the baselines primarily relies on a combination of the code released by the original author and the code from [LibCity](https://github.com/LibCity/Bigscity-LibCity). We extend our heartfelt gratitude for their remarkable contribution.
