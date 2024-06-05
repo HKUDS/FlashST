@@ -1,5 +1,7 @@
 # FlashST: A Simple and Universal Prompt-Tuning Framework for Traffic Prediction
 
+<img src='https://github.com/LZH-YS1998/GPT-ST_img/blob/main/FlashST_repo.png' />
+
 A pytorch implementation for the paper: [FlashST: A Simple and Universal Prompt-Tuning Framework for Traffic Prediction](https://arxiv.org/abs/2405.17898)<br />  
 
 [Zhonghang Li](https://scholar.google.com/citations?user=__9uvQkAAAAJ), [Lianghao Xia](https://akaxlh.github.io/), [Yong Xu](https://scholar.google.com/citations?user=1hx5iwEAAAAJ), [Chao Huang](https://sites.google.com/view/chaoh)* (*Correspondence)<br />  
