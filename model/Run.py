@@ -116,13 +116,13 @@ else:
 #init model
 if args.mode == 'pretrain':
     model = Network_Pretrain(args)
-    if torch.cuda.device_count() > 1:
-        model = nn.DataParallel(model)
+    # if torch.cuda.device_count() > 1:
+    #     model = nn.DataParallel(model)
     model = model.to(args.device)
 else:
     model = Network_Predict(args)
-    if torch.cuda.device_count() > 1:
-        model = nn.DataParallel(model)
+    # if torch.cuda.device_count() > 1:
+    #     model = nn.DataParallel(model)
     model = model.to(args.device)
     if args.mode == 'eval':
         load_dir = os.path.join(current_dir, '../SAVE', 'pretrain', args.model)
