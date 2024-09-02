@@ -145,13 +145,13 @@ class FlashST(nn.Module):
             self.pretrain_model = PromptNet(args)
 
 
-    def forward(self, source, label, select_dataset, batch_seen=None, nadj=None, lpls=None, useGNN=False, DSU=True):
+    def forward(self, source, label, select_dataset, batch_seen=None, nadj=None, lpls=None, useGNN=False):
         if self.mode == 'ori':
             return self.forward_ori(source, label, select_dataset, batch_seen)
         else:
-            return self.forward_pretrain(source, label, select_dataset, batch_seen, nadj, lpls, useGNN, DSU)
+            return self.forward_pretrain(source, label, select_dataset, batch_seen, nadj, lpls, useGNN)
 
-    def forward_pretrain(self, source, label, select_dataset, batch_seen=None, nadj=None, lpls=None, useGNN=False, DSU=True):
+    def forward_pretrain(self, source, label, select_dataset, batch_seen=None, nadj=None, lpls=None, useGNN=False):
         x_prompt_return = self.pretrain_model(source[..., :self.input_base_dim], source, None, nadj, lpls, useGNN)
         if self.model == 'DMSTGCN':
             x_predic = self.predictor(x_prompt_return, source[:, 0, 0, 1], select_dataset)  # MTGNN
