@@ -85,7 +85,7 @@ class Trainer(object):
         for i in range(train_len):
             x_in, y_in, y_lbl = spt_task_x[i], spt_task_y[i], spt_task_y[i][..., 0:1]
             x_in, y_in, y_lbl = x_in.to(self.args.device), y_in.to(self.args.device), y_lbl.to(self.args.device)
-            out, q = self.model(x_in, x_in, select_dataset, batch_seen=None, nadj=nadj, lpls=lpls, useGNN=True, DSU=True)
+            out, q = self.model(x_in, x_in, select_dataset, batch_seen=None, nadj=nadj, lpls=lpls, useGNN=True)
             loss_pred, _ = self.loss(out, y_lbl, self.scaler_dict[select_dataset])
             loss_ssl = self.loss_ssl(q, q)
             loss = loss_pred + loss_ssl
@@ -177,7 +177,7 @@ class Trainer(object):
             target = target.to(self.args.device)
             data = data[..., :self.args.input_base_dim + self.args.input_extra_dim]
             label = target[..., :self.args.input_base_dim + self.args.input_extra_dim]
-            out, q = self.model(data, data, self.args.dataset_test, self.batch_seen, nadj=nadj, lpls=lpls, useGNN=True, DSU=True)
+            out, q = self.model(data, data, self.args.dataset_test, self.batch_seen, nadj=nadj, lpls=lpls, useGNN=True)
             loss_pred, _ = self.loss(out, label[..., :self.args.output_dim], self.eval_scaler_dict[self.args.dataset_test])
 
             if self.args.mode == 'eval':
@@ -210,7 +210,7 @@ class Trainer(object):
                 target = target.to(self.args.device)
                 data = data[..., :self.args.input_base_dim + self.args.input_extra_dim]
                 label = target[..., :self.args.input_base_dim + self.args.input_extra_dim]
-                out, _ = self.model(data, data, self.args.dataset_test, batch_seen=None, nadj=nadj, lpls=lpls, useGNN=True, DSU=False)
+                out, _ = self.model(data, data, self.args.dataset_test, batch_seen=None, nadj=nadj, lpls=lpls, useGNN=True)
                 loss, _ = self.loss(out, label[..., :self.args.output_dim], self.eval_scaler_dict[self.args.dataset_test])
                 if not torch.isnan(loss):
                     total_val_loss += loss.item()
@@ -237,7 +237,7 @@ class Trainer(object):
                 data = data.to(args.device)
                 target = target.to(args.device)
                 data = data[..., :args.input_base_dim + args.input_extra_dim]
-                output, _ = model(data, data, args.dataset_test, batch_seen=None, nadj=nadj, lpls=lpls, useGNN=True, DSU=False)
+                output, _ = model(data, data, args.dataset_test, batch_seen=None, nadj=nadj, lpls=lpls, useGNN=True)
                 label = target[..., :args.output_dim]
                 y_true.append(label)
                 y_pred.append(output)
