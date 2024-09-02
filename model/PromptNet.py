@@ -82,7 +82,7 @@ class PromptNet(nn.Module):
 
         self.act = nn.LeakyReLU()
 
-    def forward(self, history_data, source2, batch_seen=None, nadj=None, lpls=None, useGNN=False, DSU=True):
+    def forward(self, history_data, source2, batch_seen=None, nadj=None, lpls=None, useGNN=False):
 
         input_data = history_data
         batch_size, _, num_nodes, _ = input_data.shape
